@@ -1,0 +1,27 @@
+/* Délimiteur changé en ; */
+/* Connexion à localhost pour MariaDB or MySQL (TCP/IP), nom d'utilisateur root, mot de passe : No… */
+SELECT CONNECTION_ID();
+/* Connecté. ID du processus : 2 */
+/* Jeu de caractères : utf8mb4 */
+SHOW STATUS;
+SELECT NOW();
+SHOW VARIABLES;
+SHOW DATABASES;
+SHOW OPEN TABLES FROM js_projet WHERE `in_use`!=0;
+USE `js_projet`;
+/* Ouverture de la session « Laragon » */
+SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='js_projet';
+SHOW TABLE STATUS FROM `js_projet`;
+SHOW FUNCTION STATUS WHERE `Db`='js_projet';
+SHOW PROCEDURE STATUS WHERE `Db`='js_projet';
+SHOW TRIGGERS FROM `js_projet`;
+SELECT `DEFAULT_COLLATION_NAME` FROM `information_schema`.`SCHEMATA` WHERE `SCHEMA_NAME`='information_schema';
+SHOW TABLE STATUS FROM `information_schema`;
+SHOW FUNCTION STATUS WHERE `Db`='information_schema';
+SHOW PROCEDURE STATUS WHERE `Db`='information_schema';
+SHOW TRIGGERS FROM `information_schema`;
+SHOW EVENTS FROM `information_schema`;
+SELECT *, EVENT_SCHEMA AS `Db`, EVENT_NAME AS `Name` FROM information_schema.`EVENTS` WHERE `EVENT_SCHEMA`='js_projet';
+SHOW CREATE TABLE `js_projet`.`cocktail`;
+SHOW COLLATION;
+SHOW ENGINES;
